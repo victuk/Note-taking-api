@@ -5,6 +5,8 @@ const Schema = mongoose.Schema;
 const RegisterSchema = new Schema({
     fullName: String,
     email: String,
+    picture: String,
+    publicId: String,
     password: String,
     role: String
 });

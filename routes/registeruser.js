@@ -12,6 +12,8 @@ router.post('/', function (req, res) {
       ) {
     const fullName = req.body.fullName;
     const email = req.body.email;
+    const picture = 'none';
+    const publicId = 'none';
     const password = req.body.password;
     const role = "user";
 
@@ -19,6 +21,8 @@ router.post('/', function (req, res) {
     const newUser = new regUser({
         fullName,
         email,
+        picture,
+        publicId,
         password,
         role,
         createDate: Date.now()
