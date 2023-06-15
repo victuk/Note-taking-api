@@ -2,11 +2,8 @@ var express = require('express');
 var router = express.Router();
 var regUser = require('../models/register');
 require('dotenv').config();
-const passportJWT = require('passport-jwt');
 const jwt = require('jsonwebtoken');
-const ExtractJwt = passportJWT.ExtractJwt;
 const jwtOptions = {};
-jwtOptions.jwtFromRequest = ExtractJwt.fromAuthHeaderWithScheme('jwt');
 jwtOptions.secretOrKey = process.env.secretkey;
 
 router.post('/', (req, res) => {

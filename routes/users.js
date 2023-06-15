@@ -19,7 +19,7 @@ router.get('/profile', authLogin, function(req, res) {
 
 
 
-router.put('profile/', authLogin, async function(req, res) {
+router.put('/profile', authLogin, async function(req, res) {
    let changeProfilePicture = await regUser.findByIdAndUpdate(req.decoded.id, {
     picture: req.body.picture,
     publicId: req.body.publicId
@@ -33,8 +33,7 @@ router.put('profile/', authLogin, async function(req, res) {
 
 
 
-router.post('change-name/', authLogin, async function(req, res) {
-  return console.log(req.body);
+router.post('/change-name', authLogin, async function(req, res) {
   let newName = await regUser.findByIdAndUpdate(req.decoded.id, {
     fullName: req.body.fullName
   });

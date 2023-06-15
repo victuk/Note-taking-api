@@ -6,16 +6,8 @@ var logger = require('morgan');
 var cors = require('cors');
 var mongoose = require('mongoose');
 var jwt = require('jsonwebtoken');
-var passport = require('passport');
 var bodyParser = require('body-parser')
-const passportJWT = require('passport-jwt');
-const ExtractJwt = passportJWT.ExtractJwt;
 var cloudinary = require('cloudinary').v2;
-const JwtStrategy = passportJWT.Strategy;
-const jwtOptions = {}
-jwtOptions.jwtFromRequest = ExtractJwt.fromAuthHeaderWithScheme('jwt');
-jwtOptions.secretOrKey = process.env.secretkey;
-
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var registerRouter = require('./routes/registeruser');
