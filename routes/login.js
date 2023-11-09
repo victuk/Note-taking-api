@@ -4,7 +4,7 @@ var regUser = require('../models/register');
 require('dotenv').config();
 const jwt = require('jsonwebtoken');
 const jwtOptions = {};
-jwtOptions.secretOrKey = process.env.secretkey;
+const secretKey = process.env.secretkey;
 
 router.post('/', (req, res) => {
     if (req.body.email && req.body.password) {
@@ -19,7 +19,7 @@ router.post('/', (req, res) => {
                     if (isMatch) {
                         if (user.role == 'user' || user.role == 'admin') {
                             const payload = { id: user.id, role: user.role};
-                            const token = jwt.sign(payload, jwtOptions.secretOrKey);
+                            const token = jwt.sign(payload, secretKey);
                             res.json({ status: true, token, email: user.email, role: user.role });
                         }
 

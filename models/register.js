@@ -9,7 +9,7 @@ const RegisterSchema = new Schema({
     publicId: String,
     password: String,
     role: String
-});
+}, {timestamps: true});
 
 const User = mongoose.model('User', RegisterSchema);
 module.exports = User;

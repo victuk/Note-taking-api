@@ -6,7 +6,7 @@ const UserSchema = new Schema({
     blogHead: String,
     blogBody: String,
     postDate: Date
-});
+}, {timestamps: true});
 
 const Blog = mongoose.model("Blog", UserSchema)
 module.exports = Blog
